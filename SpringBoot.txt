@@ -84,7 +84,25 @@ JSP와 달리 Servlet코드롤 변경되지 않기 때문에 오로지 View에 �
 확장성이 뛰어나며, 커스터마이징이 쉽다.
 
 th:*
+
+
 타임리프 전용 속성이며, 브라우저는 이를 무시한다.
 
 xmlns:th=""
 Thymeleaf의 th속성을 사용하기 위해 선언된 네임스페이스이다.
+
+서버와 DB의 연결
+WAS(WebApplication Server)와 데이터 베이스 사이의 연결에는 많은 자원이 소모된다.
+서버가 DB에 연결하기 위한 Connection자원이 가장 큰 비율을 차지한다.
+이를 보완할 수 있는 방법이 ConnectionPool이다.
+
+커넥션 풀(Connection Pool)이란?
+데이터베이스와 연결된 커넥션을 미리 만들어놓고 이를 pool로 관리하는 것
+필요할 때마다 Connection pool의 connection에 필요한 자원을 줄일 수 있다.
+커넥션풀을 사용하면 커넥션 수를 제한할 수 있어 과도한 접속으로 인한 서버 자원 고갈을 방지할 수 있다.
+DB접속 모듈을 공통화 해 DB서버의 환경이 바뀔 경우 유지보수를 쉽게 할 수있다.
+
+HikariCP란?
+가벼운 용량과 빠른 속도를 가지는 JDBC 커넥션 풀 프레임워크이다.
+SpringBoot는 커넥션 풀 관리를 위해 HikariCP를 사용한다.
+Spring boot starterd jdbc에 포함되어있다.
