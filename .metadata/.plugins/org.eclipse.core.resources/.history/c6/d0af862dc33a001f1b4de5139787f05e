@@ -1,0 +1,27 @@
+package com.korea.first.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+
+
+@Controller
+public class ThymeCojntroller {
+	
+	@RequestMapping("/ex01")
+	public String ex01(Model model) {
+		model.addAttribute("lastname","lee");
+		model.addAttribute("firstname","GilDong");
+		return "ex01";
+	}
+	@RequestMapping("/ex02")
+	public String ex02(Model model) {
+		model.addAttribute("lastname","lee");
+		model.addAttribute("firstname","GilDong");
+		return "ex02";
+	}
+}

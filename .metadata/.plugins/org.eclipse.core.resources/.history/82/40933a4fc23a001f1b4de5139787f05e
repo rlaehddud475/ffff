@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- th:text, th:utext
+	JSP의 EL표현식은 ${}와 마찬가지로 ${}표현식을 사용해서 컨트롤러에서
+	전달받은 데이터에 접근할 수있다. -->
+	<h1>데이터 출력하기</h1>
+	<div th:text="${lastname}">Kim</div>
+	<div>[[${lastname}]]</div>
+	<hr>
+	<h1>문자열 결합과 리터럴 치환</h1>
+<span th:text="'My name is '+${lastname}+','+${firstname}"></span>
+<br>
+<span th:text="|My name is ${lastname},${firstname}|"></span>
+<hr>
+<span th:text="${<i>GilDong,Hong</i>}"></span><br>
+</body>
+</html>
